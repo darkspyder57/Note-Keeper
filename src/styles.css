@@ -1,0 +1,254 @@
+body {
+  font-family: Arial, sans-serif;
+  /* background: linear-gradient(135deg, rgb(28, 164, 206) 10%, rgb(17, 43, 160) 80%); */
+  background: linear-gradient(135deg,rgb(0, 149, 255) 40%,rgb(156, 56, 186) 100%);
+  /* background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 10%, transparent); */
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background: #14141490;
+  height: 400px;
+  padding: 16px;
+  box-shadow: 2px 3px 4px rgba(137, 3, 137, 0.998);
+  border-radius: 10px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: linear-gradient(#9218fdb1, #6818afb4);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  box-shadow: 2px 3px 4px rgb(0, 0, 0);
+  text-align: left;
+  cursor: pointer;
+  text-align: center;
+  color: whitesmoke;
+  transition: width 0.3s;
+}
+
+.sidebar button:hover{
+  /* background: linear-gradient(rgba(238, 4, 15, 0.998),rgba(163, 5, 5, 0.998)); */
+  /* padding: 15px; */
+  width: 105%;
+}
+
+.sidebar button.active {
+  background: linear-gradient(#9218fdb1, #6818afb4);
+  font-weight: bolder;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.main-content h1{
+  font-family: "Pacifico";
+  text-align: left;
+  margin-left: 9px;
+  line-height: 0px;
+  color: #9418fd;
+  text-shadow: 1px 2px 3px rgb(73, 236, 239), -1px -2px 3px rgb(173, 239, 73);
+  /* color: rgb(255, 0, 0);
+  text-shadow: 1px 2px 3px rgb(1, 15, 94), -1px -2px 3px rgb(194, 6, 93); */
+}
+
+.add-notebtn{
+  border: none;
+  padding: 15px;
+  margin: 20px auto;
+  width: 20%;
+  background: linear-gradient(#9418fd, #571094);
+  color: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 2px 3px 4px rgb(33, 33, 33);
+  cursor: pointer;
+}
+.add-notebtn:hover{
+  font-weight: bold;
+}
+
+.add-notebtn:active{
+  opacity: 0.7;
+}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.note {
+  background: #ede8e8;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 80%;
+  border: 2px solid purple;
+  margin: auto;
+}
+
+.note-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.note-buttons button {
+  margin-left: 8px;
+  border: none;
+  padding: 10px;
+  /* width: 20%; */
+  /*border-radius: 20px;
+  box-shadow: 1px 2px 3px black;
+  font-size: 12px; */
+  float: right;
+  cursor: pointer;
+}
+
+.edit-btn{
+  background: transparent;
+  transition: background-color 1;
+}
+
+.delete-btn{
+  background: transparent;
+  transition: background-color 1;
+}
+
+.edit-btn:hover{
+  border-radius: 50%;
+  background-color: grey;
+  width: 40px;
+}
+
+.delete-btn:hover{
+  border-radius: 50%;
+  background-color: grey;
+  width: 40px;
+}
+
+
+.note-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(rgba(9, 231, 213, 0.667),rgb(55, 146, 238));
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 20px;
+  width: 40%;
+  
+}
+
+.note-popup input,
+.note-popup textarea {
+  align-content: center;
+  display: block;
+  width: 95%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.note-popup textarea{
+  padding: 30px 10px 30px 8px;
+}
+.note-popup button {
+  margin-right: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.pagination button {
+  margin: 0 4px;
+  padding: 8px 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.trash {
+  padding: 16px;
+}
+
+.save-btn,.cancel-btn{
+  border: none;
+  padding: 10px;
+  width: 20%;
+  border-radius: 20px;
+  box-shadow: 1px 2px 3px black;
+  font-size: 12px;
+  float: right;
+  cursor: pointer;
+}
+
+.save-btn{
+  background: linear-gradient(green,rgb(2, 43, 2));
+  color: whitesmoke;
+}
+
+.save-btn:hover{
+  /* opacity: 0.8; */
+  background: linear-gradient(green,rgb(10, 187, 10));
+}
+
+.cancel-btn{
+  background: linear-gradient(red,rgb(126, 3, 3));
+  color: whitesmoke;
+}
+
+.cancel-btn:hover{
+  /* opacity: 0.8; */
+  background: linear-gradient(red,rgb(246, 6, 6));
+}
+
+.deletepermanent-btn{
+  background: transparent;
+  transition: background-color 1;
+}
+
+.deletepermanent-btn:hover{
+  border-radius: 50%;
+  background-color: grey;
+  width: 40px;
+}
+
+.restore-btn:hover{
+  border-radius: 50%;
+  background-color: grey;
+  width: 40px;
+}
+
+.restore-btn{
+  background: transparent;
+  transition: background-color 1;
+}
+
+#page-no{
+  background: linear-gradient(#9418fd, #571094);
+}
